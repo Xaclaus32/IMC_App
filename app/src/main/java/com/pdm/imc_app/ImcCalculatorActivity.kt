@@ -87,10 +87,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
 
         btnCalculate.setOnClickListener(View.OnClickListener {
-            peso.toDouble()
-            tvHeight
 
-            if (peso > 0 ) {
+
+            if (peso.toDouble() > 0 && tvHeight.text.toString().toDouble() > 0) {
 
                 val result = calculateIMC()
 
