@@ -109,7 +109,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun calculateIMC(): Double {
 
-        return peso.toDouble() / (tvHeight.text.toString().toDouble() * tvHeight.text.toString().toDouble())
+        return peso.toDouble() / ((tvHeight.text.toString().toDouble() * tvHeight.text.toString().toDouble()/10000))
     }
 
 
@@ -159,7 +159,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnCalculate=findViewById(R.id.btnCalcul)
         rsHeight.addOnChangeListener { _, value, _ ->
             //tvHeight.text = value.toString()
-            tvHeight.text = DecimalFormat("#.##").format(value) + " cm"
+            tvHeight.text = DecimalFormat("#.##").format(value)
         }
     }
 

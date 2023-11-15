@@ -26,12 +26,12 @@ class ImcResultActivity : AppCompatActivity() {
 
     private fun initUI() {
         iniresul(num)
-        inidescrip(resul.toString())
+        inidescrip(num)
     }
 
     private fun initComponents() {
         imc = findViewById(R.id.IMC)
-        resul = findViewById(R.id.viewResul)
+        resul = findViewById(R.id.Resultado)
         descrip = findViewById(R.id.Descrip)
         btnreCalculate = findViewById(R.id.btnreCalcul)
         val valorDelIntent = intent.extras?.getDouble("IMC_RESULT")
@@ -69,16 +69,14 @@ class ImcResultActivity : AppCompatActivity() {
     }
 
 
-    private fun inidescrip(descripcion : String){
-        val mystring=descripcion
-         when (mystring){
-
-             "Bajo peso" -> descrip.text="Es importante seguir una dieta saludable y realizar ejercicio de forma frecuente. También es fundamental descansar de forma adecuada. "
-             "Peso normal" ->descrip.text=" Sigue así "
-             "Sobrepeso" ->descrip.text="Perder peso a través de una alimentación saludable, más actividad física y otros cambios en las rutinas habituales "
-             "Obesidad grado 1" ->descrip.text=" Sigue un patrón alimentario cercano a la dieta mediterránea, es decir, bajo en grasas y rico en frutas y verduras. En cuanto al deporte, la constancia es fundamental."
-             "Obesidad grado 2" ->descrip.text="Prueba la dieta flexitariana, que enfatiza frutas, verduras, granos integrales y proteínas vegetales y marca objetivos realistas para perder peso"
-             "Obesidad grado 3" ->descrip.text="Crear nuevos hábitos alimenticios y de actividad física; en ciertos casos, una cirugía gastrointestinal también puede considerarse para tratar este tipo de obesidad"
+    private fun inidescrip(num :Double){
+         return when {
+             num < 18.5 -> descrip.text="Es importante seguir una dieta saludable y realizar ejercicio de forma frecuente. También es fundamental descansar de forma adecuada. "
+             num < 24.9  ->descrip.text=" Sigue así "
+             num < 29.9 ->descrip.text="Perder peso a través de una alimentación saludable, más actividad física y otros cambios en las rutinas habituales "
+             num < 34.9  ->descrip.text=" Sigue un patrón alimentario cercano a la dieta mediterránea, es decir, bajo en grasas y rico en frutas y verduras. En cuanto al deporte, la constancia es fundamental."
+             num < 39.9  ->descrip.text="Prueba la dieta flexitariana, que enfatiza frutas, verduras, granos integrales y proteínas vegetales y marca objetivos realistas para perder peso"
+             else  ->descrip.text="Crear nuevos hábitos alimenticios y de actividad física; en ciertos casos, una cirugía gastrointestinal también puede considerarse para tratar este tipo de obesidad"
 
         }
 

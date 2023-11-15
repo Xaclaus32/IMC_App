@@ -14,22 +14,24 @@
         android:id="@+id/Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Tu resultado"
-        android:textColor="@color/white"
 
-        android:textSize="50sp"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/viewResul"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="100dp"
         app:cardBackgroundColor="@color/bg_comp_sel"
         app:cardCornerRadius="16dp"
@@ -79,10 +81,10 @@
 
             <TextView
                 android:id="@+id/Descrip"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_marginBottom="50sp"
-                android:layout_marginRight="130sp"
                 android:text="Descripción"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -100,15 +102,16 @@
         android:id="@+id/btnreCalcul"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginBottom="15dp"
         android:background="@color/bg_fab"
+
         android:text="Re-Calcular"
+
         android:textColor="@color/white"
-
         android:textSize="20sp"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewResul">
+        app:layout_constraintStart_toStartOf="parent">
 
     </androidx.appcompat.widget.AppCompatButton>
 
